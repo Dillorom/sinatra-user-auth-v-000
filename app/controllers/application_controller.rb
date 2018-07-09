@@ -31,7 +31,7 @@ class ApplicationController < Sinatra::Base
     puts params
     @user = User.find_by(email: params["email"], password: params["password"])
     session[:id] = @user.id
-    
+
     if @user
       session[:id] = @user.id
       redirect '/users/home'
